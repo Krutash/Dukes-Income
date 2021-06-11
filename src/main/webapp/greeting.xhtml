@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:fc="http://xmlns.jcp.org/jsf/composite/components">
+    <h:head>
+        <title>Firstcup Greeting Page</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h2>
+                <h:outputText value="#{bundle.Welcome}"/>
+            </h2>
+            <h:outputText value="#{bundle.DukeHas} "/>
+            <h:outputText value="#{dukesIncome.income} #{bundle.ThisMuchIncomeToday}" />
+            <p/>
+            <h:outputText value="#{bundle.Instructions}" />
+            <p/>
+            <h:outputText value="#{bundle.YourIncome}"/>
+            <fc:inputIncome id="userIncome" income="#{dukesIncome.yourIncome}" />
+            <p/>
+            <h:commandButton value="#{bundle.Submit}" 
+                             action="#{dukesIncome.processIncome()}" />
+
+        </h:form>
+
+    </h:body>
+</html>
+
